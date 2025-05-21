@@ -2,7 +2,7 @@
 
 ##  Opis
 
-Projekt demonstruje prosty system rejestracji, logowania i pobierania danych użytkownika, zbudowany w Node.js + Express + PostgreSQL + Prisma. Frontend to zwykły HTML + JS. JWT służy do autoryzacji, dane użytkownika pobierane są z endpointu `/auth/me`.
+Projekt demonstruje prosty system rejestracji, logowania i pobierania danych użytkownika, zbudowany w Node.js + Express + PostgreSQL + Prisma. Frontend to zwykły HTML + CSS + JS. JWT służy do autoryzacji, dane użytkownika pobierane są z endpointu `/auth/me`.
 
 ---
 

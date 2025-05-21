@@ -6,13 +6,11 @@ import { z } from "zod";
 
 const JWT_SECRET = process.env.JWT_SECRET || "dev-secret";
 
-// 🔐 Schemat walidacji
 const registerSchema = z.object({
   email: z.string().email(),
   password: z.string().min(6),
 });
 
-// ✅ Rejestracja użytkownika
 export const register: RequestHandler = async (req, res) => {
   const result = registerSchema.safeParse(req.body);
   if (!result.success) {
@@ -36,7 +34,6 @@ export const register: RequestHandler = async (req, res) => {
   res.status(201).json({ id: user.id, email: user.email });
 };
 
-// ✅ Logowanie użytkownika
 export const login: RequestHandler = async (req, res) => {
   const { email, password } = req.body;
 
@@ -57,7 +54,6 @@ export const login: RequestHandler = async (req, res) => {
   res.json({ token });
 };
 
-// ✅ Dane użytkownika
 export const me: RequestHandler = async (req, res) => {
   const userId = (req as any).user?.userId;
 
